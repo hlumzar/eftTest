@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
-<body>
-<button type="button" onclick="phpTest()">Pay</button>
+
 
 <?php
+    Echo "<button type="button" onclick="phpTest()">Pay</button>"
     function phpTest(){
         $url = "https://eftsecure.callpay.com/api/v1/payment-key";
 
@@ -32,5 +30,3 @@
     }
 
 ?>
-</body>
-</html>
