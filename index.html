@@ -3,13 +3,16 @@
 <body>
 <button type="button" onclick="eftTest()">Pay</button>
 
-<script>
+<script crossorigin ="use-credentials">
 function eftTest() {
+    
     var url = "https://eftsecure.callpay.com/api/v1/payment-key";
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
-    xhr.setRequestHeader("Access-Control-Allow-Origin", "https://hlumzar.github.io/eftTest/");
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); 
+    xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://www.asfd.co/');
+
     xhr.setRequestHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
     xhr.setRequestHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
     xhr.setRequestHeader("Authorization", "Basic eW9kYTp5b2RhMTIzNGFzZGY=");
