@@ -10,12 +10,12 @@ function eftTest() {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url);
     
-    headers.append('Access-Control-Allow-Origin', '*');
-    headers.append('Access-Control-Allow-Credentials', 'true');
+    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+    xhr.setRequestHeader('Access-Control-Allow-Credentials', 'true');
 
-    headers.append('GET', 'POST', 'OPTIONS');
-    xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-    xhr.setRequestHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
+    xhr.setRequestHeader('GET', 'POST', 'OPTIONS');
+    //xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+    //xhr.setRequestHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
     xhr.setRequestHeader("Authorization", "Basic eW9kYTp5b2RhMTIzNGFzZGY=");
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
