@@ -1,43 +1,9 @@
 <!DOCTYPE html>
 <html>
 <body>
-<button type="button" onclick="eftTest()">Pay</button>
+<button type="button" onclick="phpTest()">Pay</button>
 
-<script>
-function eftTest() {
-    var url = "https://eftsecure.callpay.com/api/v1/payment-key";
-
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", url);
-    
-    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-    xhr.setRequestHeader('Access-Control-Allow-Credentials', 'true');
-
-    xhr.setRequestHeader('GET', 'POST', 'OPTIONS');
-    //xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-    //xhr.setRequestHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
-    xhr.setRequestHeader("Authorization", "Basic eW9kYTp5b2RhMTIzNGFzZGY=");
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-    xhr.onreadystatechange = async function () {
-    if (xhr.readyState === 4) {
-        console.log(xhr.status);
-        console.log(xhr.responseText);
-        paymentLink = await JSON.parse(xhr.responseText)["url"];
-        console.log(paymentLink);
-        //window.open("https://eftsecure.callpay.com/eft?payment_key=09d37e23d9599a6acb4897b5a8aaef3f");
-    }
-    };
-
-    var reference = "ref";
-    var amount = "10000";
-
-    var data = `merchant_reference=${reference}&amount=${amount}`;
-
-    xhr.send(data);
-}
-</script>
-<!-- <?php
+<?php
     function phpTest(){
         $url = "https://eftsecure.callpay.com/api/v1/payment-key";
 
@@ -65,6 +31,6 @@ function eftTest() {
         var_dump($resp);
     }
 
-?> -->
+?>
 </body>
 </html>
